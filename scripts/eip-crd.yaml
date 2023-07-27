@@ -101,12 +101,18 @@ spec:
                   properties:
                     elasticIP:
                       type: string
+                    resourceId:
+                      type: string
+                    resourceType:
+                      type: string
                     selector:
                       additionalProperties:
                         type: string
                       type: object
                   required:
                   - elasticIP
+                  - resourceId
+                  - resourceType
                   - selector
                   type: object
                 type: array
