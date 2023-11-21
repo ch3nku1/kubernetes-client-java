@@ -38,8 +38,6 @@ spec:
             properties:
               ecsDiskId:
                 type: string
-              ecsDiskSizeInGb:
-                type: integer
               repeatWeekdays:
                 items:
                   type: string
@@ -52,7 +50,6 @@ spec:
                 type: array
             required:
             - ecsDiskId
-            - ecsDiskSizeInGb
             - repeatWeekdays
             - retentionDays
             - timePoints
@@ -275,15 +272,15 @@ spec:
             properties:
               ecsDiskId:
                 type: string
-              ecsDiskSizeInGb:
-                type: integer
             required:
             - ecsDiskId
-            - ecsDiskSizeInGb
             type: object
           status:
             description: EcsDiskSnapshotStatus defines the observed state of EcsDiskSnapshot
             properties:
+              ecsDiskSize:
+                format: int64
+                type: integer
               image:
                 type: string
               size:
