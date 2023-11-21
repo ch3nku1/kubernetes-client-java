@@ -38,6 +38,8 @@ spec:
             properties:
               ecsDiskId:
                 type: string
+              ecsDiskSizeInGb:
+                type: integer
               repeatWeekdays:
                 items:
                   type: string
@@ -50,6 +52,7 @@ spec:
                 type: array
             required:
             - ecsDiskId
+            - ecsDiskSizeInGb
             - repeatWeekdays
             - retentionDays
             - timePoints
