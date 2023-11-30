@@ -5,20 +5,21 @@ metadata:
   annotations:
     controller-gen.kubebuilder.io/version: v0.11.1
   creationTimestamp: null
-  name: ecsdiskresizes.sihe.cloud
+  name: ecsdiskautosnapshots.sihe.cloud
 spec:
   group: sihe.cloud
   names:
-    kind: EcsDiskResize
-    listKind: EcsDiskResizeList
-    plural: ecsdiskresizes
-    singular: ecsdiskresize
+    kind: EcsDiskAutoSnapshot
+    listKind: EcsDiskAutoSnapshotList
+    plural: ecsdiskautosnapshots
+    singular: ecsdiskautosnapshot
   scope: Namespaced
   versions:
   - name: v1
     schema:
       openAPIV3Schema:
-        description: EcsDiskResize is the Schema for the ecsdiskresizes API
+        description: EcsDiskAutoSnapshot is the Schema for the ecsdiskautosnapshots
+          API
         properties:
           apiVersion:
             description: 'APIVersion defines the versioned schema of this representation
@@ -33,23 +34,31 @@ spec:
           metadata:
             type: object
           spec:
-            description: EcsDiskResizeSpec defines the desired state of EcsDiskResize
+            description: EcsDiskAutoSnapshotSpec defines the desired state of EcsDiskAutoSnapshot
             properties:
               ecsDiskId:
                 type: string
-              newSizeInGb:
+              fullSnapshotInterval:
                 type: integer
+              repeatWeekdays:
+                items:
+                  type: string
+                type: array
+              retentionDays:
+                type: integer
+              timePoints:
+                items:
+                  type: string
+                type: array
             required:
             - ecsDiskId
-            - newSizeInGb
+            - fullSnapshotInterval
+            - repeatWeekdays
+            - retentionDays
+            - timePoints
             type: object
           status:
-            description: EcsDiskResizeStatus defines the observed state of EcsDiskResize
-            properties:
-              status:
-                type: string
-            required:
-            - status
+            description: EcsDiskAutoSnapshotStatus defines the observed state of EcsDiskAutoSnapshot
             type: object
         type: object
     served: true
