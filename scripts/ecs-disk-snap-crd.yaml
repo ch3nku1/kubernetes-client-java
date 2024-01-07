@@ -5,20 +5,21 @@ metadata:
   annotations:
     controller-gen.kubebuilder.io/version: v0.11.1
   creationTimestamp: null
-  name: ecsdisksnapshots.sihe.cloud
+  name: ecsdiskrbdimagereleases.sihe.cloud
 spec:
   group: sihe.cloud
   names:
-    kind: EcsDiskSnapshot
-    listKind: EcsDiskSnapshotList
-    plural: ecsdisksnapshots
-    singular: ecsdisksnapshot
+    kind: EcsDiskRbdImageRelease
+    listKind: EcsDiskRbdImageReleaseList
+    plural: ecsdiskrbdimagereleases
+    singular: ecsdiskrbdimagerelease
   scope: Namespaced
   versions:
   - name: v1
     schema:
       openAPIV3Schema:
-        description: EcsDiskSnapshot is the Schema for the ecsdisksnapshots API
+        description: EcsDiskRbdImageRelease is the Schema for the ecsdiskrbdimagereleases
+          API
         properties:
           apiVersion:
             description: 'APIVersion defines the versioned schema of this representation
@@ -33,21 +34,16 @@ spec:
           metadata:
             type: object
           spec:
-            description: EcsDiskSnapshotSpec defines the desired state of EcsDiskSnapshot
+            description: EcsDiskRbdImageReleaseSpec defines the desired state of EcsDiskRbdImageRelease
             properties:
-              ecsDiskId:
+              rbdImageName:
                 type: string
             required:
-            - ecsDiskId
+            - rbdImageName
             type: object
           status:
-            description: EcsDiskSnapshotStatus defines the observed state of EcsDiskSnapshot
-            properties:
-              size:
-                format: int64
-                type: integer
-              status:
-                type: string
+            description: EcsDiskRbdImageReleaseStatus defines the observed state of
+              EcsDiskRbdImageRelease
             type: object
         type: object
     served: true
