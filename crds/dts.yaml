@@ -43,6 +43,8 @@ spec:
                     type: string
                   password:
                     type: string
+                  port:
+                    type: integer
                   type:
                     type: string
                   user:
@@ -51,6 +53,7 @@ spec:
                 - dbName
                 - host
                 - password
+                - port
                 - type
                 - user
                 type: object
@@ -64,6 +67,8 @@ spec:
                     type: string
                   password:
                     type: string
+                  port:
+                    type: integer
                   type:
                     type: string
                   user:
@@ -72,6 +77,7 @@ spec:
                 - dbName
                 - host
                 - password
+                - port
                 - type
                 - user
                 type: object
