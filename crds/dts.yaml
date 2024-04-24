@@ -99,6 +99,12 @@ spec:
                     type: string
                   endDataBatchId:
                     type: integer
+                  errMsg:
+                    type: string
+                  errTable:
+                    type: string
+                  error:
+                    type: boolean
                   loadId:
                     type: integer
                   startDataBatchId:
@@ -121,6 +127,7 @@ spec:
                 required:
                 - completed
                 - endDataBatchId
+                - error
                 - loadId
                 - startDataBatchId
                 - tableLoadStatuses
