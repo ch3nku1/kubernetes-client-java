@@ -45,6 +45,8 @@ spec:
                     type: string
                   port:
                     type: integer
+                  timeZone:
+                    type: string
                   type:
                     type: string
                   user:
@@ -69,6 +71,8 @@ spec:
                     type: string
                   port:
                     type: integer
+                  timeZone:
+                    type: string
                   type:
                     type: string
                   user:
