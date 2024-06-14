@@ -56,6 +56,7 @@ spec:
             - ecsDiskId
             - repeatWeekdays
             - retentionDays
+            - timePoints
             type: object
           status:
             description: EcsDiskAutoSnapshotStatus defines the observed state of EcsDiskAutoSnapshot
