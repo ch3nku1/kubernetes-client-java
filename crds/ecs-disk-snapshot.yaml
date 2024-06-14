@@ -38,6 +38,8 @@ spec:
             properties:
               ecsDiskId:
                 type: string
+              minutesInCronFormat:
+                type: integer
               repeatWeekdays:
                 items:
                   type: string
@@ -45,8 +47,6 @@ spec:
               retentionDays:
                 type: integer
               sourceRbdPool:
-                type: string
-              timePoint:
                 type: string
               timePoints:
                 items:
